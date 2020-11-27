@@ -1,14 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/header"
+import styled from "styled-components"
 
-export default function About() {
+import Header from "../components/header"
+import { Body } from "../components/basic"
+
+const AboutImpl = ({ className }) => {
   return (
-    <div style={{ color: `teal` }}>
+    <>
       <Header />
-      <h2>About Gatsby</h2>
-      <p>Such wow. Very React.</p>
-      <Link to="/">Back home ...</Link>
-    </div>
+          <Body className={className}>
+            <h2>About Gatsby</h2>
+            <p>Such wow. Very React.</p>
+            <Link to="/">Back home ...</Link>
+          </Body>
+    </>
   )
 }
+
+
+const About = styled(AboutImpl)`
+  color: teal;
+  h2 {
+    color: blue;
+  }
+`
+
+export default About
+
